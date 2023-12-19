@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yuxchen <yuxchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:19:56 by yuxchen           #+#    #+#             */
-/*   Updated: 2023/10/31 16:18:05 by yuxchen          ###   ########.fr       */
+/*   Updated: 2023/12/12 23:26:13 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	retrun (ft_strlen(src));
+	return (ft_strlen(src));
 }

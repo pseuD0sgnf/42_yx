@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yuxchen <yuxchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:58:25 by yuxchen           #+#    #+#             */
-/*   Updated: 2023/11/06 18:16:12 by yuxchen          ###   ########.fr       */
+/*   Updated: 2023/12/14 19:27:40 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
