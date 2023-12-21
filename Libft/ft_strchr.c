@@ -12,11 +12,13 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c) // c = 't' + 256
 {
+	if (!s)
+		return (NULL);
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
@@ -24,3 +26,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
+
+#include <string.h>
+
+//strchr(s, 't' + 256)
