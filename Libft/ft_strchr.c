@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c) // c = 't' + 256
+char	*ft_strchr(const char *s, int c)
 {
 	if (!s)
 		return (NULL);
@@ -26,7 +26,3 @@ char	*ft_strchr(const char *s, int c) // c = 't' + 256
 		return ((char *)s);
 	return (NULL);
 }
-
-#include <string.h>
-
-//strchr(s, 't' + 256)

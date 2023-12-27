@@ -22,12 +22,8 @@ static int	ft_count_strs(char const *s, char c)
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-		{
 			count++;
-			i++;
-		}
-		else
-			i++;
+		i++;
 	}
 	return (count);
 }
@@ -39,7 +35,7 @@ static char	*ft_do_split(char const *s, char c, int *i_str)
 	size_t	count_str;
 
 	while (s[*i_str] == c)
-		i_str++;
+		(*i_str)++;
 	i = *i_str;
 	count_str = 0;
 	while (s[i] != c && s[i] != '\0')
@@ -50,7 +46,8 @@ static char	*ft_do_split(char const *s, char c, int *i_str)
 	str = (char *)malloc(sizeof(char) * (count_str + 1));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s + *i_str, count_str);
+	ft_strlcpy(str, s + *i_str, count_str + 1);
+	*i_str += count_str;
 	return (str);
 }
 
@@ -89,3 +86,8 @@ char	**ft_split(char const *s, char c)
 	}
 	return (strs);
 }
+
+/* int main(void)
+{
+	char * * tab = ft_split("  tripouille  42  ", ' ');
+} */

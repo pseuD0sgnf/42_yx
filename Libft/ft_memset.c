@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*set;
 
 	if (!s)
@@ -25,7 +25,5 @@ void	*ft_memset(void *s, int c, size_t n)
 	{
 		set[i++] = (unsigned char)c;
 	}
-	// 0 0 0 0 0 0
-	// 1 1 1 1 1 1
 	return (s);
 }
