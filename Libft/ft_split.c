@@ -51,7 +51,7 @@ static char	*ft_do_split(char const *s, char c, int *i_str)
 	return (str);
 }
 
-static void	ft_failed(char **strs)
+static char	**ft_failed(char **strs)
 {
 	int	i;
 
@@ -59,6 +59,7 @@ static void	ft_failed(char **strs)
 	while (strs[i])
 		free(strs[i++]);
 	free(strs);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -81,7 +82,7 @@ char	**ft_split(char const *s, char c)
 	{
 		strs[i_strs] = ft_do_split(s, c, &i_str);
 		if (!strs[i_strs])
-			ft_failed(strs);
+			return ft_failed(strs);
 		i_strs++;
 	}
 	return (strs);
