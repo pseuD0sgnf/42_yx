@@ -6,7 +6,7 @@
 /*   By: yuxchen <yuxchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 10:56:48 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/01/26 16:00:02 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/01 14:12:35 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -16,7 +16,7 @@ void clean_list(t_list **list, t_list *new_node, char *new_buf)
 {
     t_list  *tmp;
 
-    if (!list)
+    if (!*list)
         return;
     while (*list)
     {
@@ -64,7 +64,7 @@ void new_list(t_list **list)
     clean_list(list, new_node, new_buf);
 }
 
-char read_line(t_list *list)
+char *read_line(t_list *list)
 {
     char    *next_line;
     int     next_line_len;
@@ -86,7 +86,7 @@ void create_list(int fd, t_list **list)
 
     while (!find_next_line(list[fd]))
     {
-        buf = malloc((BUFFER_SIZE + 1) *sizeof(char));
+        buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
         if (!buf)
             return;
         buf_bytes = read(fd, buf, BUFFER_SIZE);
@@ -96,8 +96,9 @@ void create_list(int fd, t_list **list)
             return;
         }
         buf[buf_bytes] = '\0';
-        // append_buf(fd, list, buf);
-        append_buf(list[fd], buf);
+        if (buf[buf_bytes] == '\0')
+            append_buf(fd, list, buf);
+        // append_buf(list[fd], buf);
     }
 }
 
@@ -117,19 +118,22 @@ char *get_next_line(int fd)
 }
 
 
-// #include <asm-generic/fcntl.h>
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main()
-// {
-//     int     fd;
-//     char    *line;
-//     int     lines;
+int main()
+{
+    int     fd;
+    char    *line;
+    int     lines;
 
-//     lines = 1;
-//     fd = open("test.txt", O_RDONLY);
-
-//     get_next_line(fd);
-//     // while(line = get_next_line(fd))
-//     //     printf("%d -> %s\n", lines++, line);
-// }
+    lines = 1;
+    // fd = open("test.txt", O_RDONLY);
+    // while(line = get_next_line(fd))
+    //     printf("%d -> %s\n", lines++, line);
+    printf("%d -> %s\n", lines++, get_next_line(open("test.txt", O_RDONLY)));
+    printf("%d -> %s\n", lines++, get_next_line(open("test2.txt", O_RDONLY)));
+    printf("%d -> %s\n", lines++, get_next_line(open("test.txt", O_RDONLY)));
+    printf("%d -> %s\n", lines++, get_next_line(open("test2.txt", O_RDONLY)));
+    printf("%d -> %s\n", lines++, get_next_line(open("test.txt", O_RDONLY)));
+    printf("%d -> %s\n", lines++, get_next_line(open("test2.txt", O_RDONLY)));
+}

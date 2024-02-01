@@ -6,7 +6,7 @@
 /*   By: yuxchen <yuxchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:00:28 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/01/26 11:56:48 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/01 11:36:33 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -20,7 +20,7 @@ int get_line_len(t_list *list)
     if (!list)
         return false;
     len = 0;
-    while (list->next)
+    while (list)
     {
         i = 0;
         while (list->buffer[i])
@@ -43,20 +43,18 @@ void get_line(t_list *list, char *next_line)
     if (!list)
         return;
     j = 0;
-    while (list->next)
+    while (list)
     {
         i = 0;
         while (list->buffer[i])
         {
             if (list->buffer[i] == '\n')
             {
-                next_line[j] = '\0';
-                next_line[j++] = '\n';
+                next_line[j] = '\n';
+                next_line[+j] = '\0';
                 return;
             }
             next_line[j++] = list->buffer[i++];
-            i++;
-            j++;
         }
         list = list->next;
     }
@@ -83,41 +81,41 @@ bool find_next_line(t_list *list)
     return false;
 }
 
-// void append_buf(int fd, t_list **list, char *buf)
-// {
-//     t_list  *last_node;
-//     t_list  *new_node;
-
-//     last_node = find_last_node(list[fd]);
-//     new_node = malloc(sizeof(t_list));
-//     if (!new_node)
-//         return;
-//     if (!last_node)
-//         list[fd] = new_node;
-//     else
-//         last_node->next = new_node;
-//     new_node->buffer = buf;
-//     new_node->next = NULL;
-// }
-
-void append_buf(t_list *list, char *buf)
+void append_buf(int fd, t_list **list, char *buf)
 {
     t_list  *last_node;
     t_list  *new_node;
 
-    last_node = find_last_node(&list);
+    last_node = find_last_node(list[fd]);
     new_node = malloc(sizeof(t_list));
     if (!new_node)
         return;
     if (!last_node)
-        &list = new_node;
+        list[fd] = new_node;
     else
         last_node->next = new_node;
     new_node->buffer = buf;
     new_node->next = NULL;
 }
 
-t_list find_last_node(t_list *list)
+// void append_buf(t_list *list, char *buf)
+// {
+//     t_list  *last_node;
+//     t_list  *new_node;
+
+//     new_node = malloc(sizeof(t_list));
+//     if (!new_node)
+//         return;
+//     last_node = find_last_node(list);
+//     if (!last_node)
+//         list = new_node;
+//     else
+//         last_node->next = new_node;
+//     new_node->buffer = buf;
+//     new_node->next = NULL;
+// }
+
+t_list *find_last_node(t_list *list)
 {
     if (!list)
         return (NULL);
