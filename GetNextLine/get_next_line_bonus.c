@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:06:31 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/02 17:03:49 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/02 17:02:51 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,19 @@ char	*get_next_line(int fd)
 // int main()
 // {
 //     int     fd1;
-//     char    *line;
+//     int     fd2;
+//     int     fd3;
+//     // char    *line;
 //     int     lines;
 
 //     lines = 1;
 //     fd1 = open("test1.txt", O_RDONLY);
-//     while(line = get_next_line(fd1))
-// 		printf("%d -> %s\n", lines++, line);
+//     fd2 = open("test2.txt", O_RDONLY);
+//     fd3 = open("test3.txt", O_RDONLY);
+//     while(lines < 10)
+// 	{
+// 		printf("%d -> %s\n", lines++, get_next_line(fd1));
+// 		printf("%d -> %s\n", lines++, get_next_line(fd2));
+// 		printf("%d -> %s\n", lines++, get_next_line(fd3));
+// 	}
 // }
