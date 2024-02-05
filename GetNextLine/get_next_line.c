@@ -6,7 +6,7 @@
 /*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:06:31 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/02 17:03:49 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/04 17:10:42 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ char	*get_next_line(int fd)
 	return (next_line);
 }
 
-// #include <stdio.h>
+// # include <fcntl.h>
 
 // int main()
 // {
@@ -127,5 +127,8 @@ char	*get_next_line(int fd)
 //     lines = 1;
 //     fd1 = open("test1.txt", O_RDONLY);
 //     while(line = get_next_line(fd1))
+// 	{
 // 		printf("%d -> %s\n", lines++, line);
+// 		free(line);
+// 	}
 // }

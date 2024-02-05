@@ -6,11 +6,11 @@
 /*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:06:31 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/02 17:02:51 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/04 17:14:28 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	clean_list(t_list **list, t_list *new_node, char *new_buf)
 {
@@ -116,15 +116,17 @@ char	*get_next_line(int fd)
 	return (next_line);
 }
 
-// #include <stdio.h>
+// # include <fcntl.h>
 
 // int main()
 // {
 //     int     fd1;
 //     int     fd2;
 //     int     fd3;
-//     // char    *line;
 //     int     lines;
+// 	char	*line1;
+// 	char	*line2;
+// 	char	*line3;
 
 //     lines = 1;
 //     fd1 = open("test1.txt", O_RDONLY);
@@ -132,8 +134,14 @@ char	*get_next_line(int fd)
 //     fd3 = open("test3.txt", O_RDONLY);
 //     while(lines < 10)
 // 	{
-// 		printf("%d -> %s\n", lines++, get_next_line(fd1));
-// 		printf("%d -> %s\n", lines++, get_next_line(fd2));
-// 		printf("%d -> %s\n", lines++, get_next_line(fd3));
+// 		line1 = get_next_line(fd1);
+// 		printf("%d -> %s\n", lines++, line1);
+// 		free(line1);
+// 		line2 = get_next_line(fd2);
+// 		printf("%d -> %s\n", lines++, line2);
+// 		free(line2);
+// 		line3 = get_next_line(fd3);
+// 		printf("%d -> %s\n", lines++, line3);
+// 		free(line3);
 // 	}
 // }

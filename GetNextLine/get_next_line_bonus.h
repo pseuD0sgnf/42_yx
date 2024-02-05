@@ -6,18 +6,17 @@
 /*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 18:00:13 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/02 12:13:05 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/04 16:46:29 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
-# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include <stdbool.h>
 # include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
