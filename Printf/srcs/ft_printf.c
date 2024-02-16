@@ -6,7 +6,7 @@
 /*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:27:37 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/16 10:38:23 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/16 11:08:38 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ int	ft_printf(const char *str, ...)
 //     int     integer = -42;
 //     unsigned int    uninteger = 42;
 //     void    *ptr = (void *)string;
-//     // void    *ptr = NULL;
 //     int     count;
 
 //     // count = printf("%c\n", character);
