@@ -6,7 +6,7 @@
 /*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:06:31 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/04 17:14:28 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/16 15:13:31 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,7 @@ void	create_list(int fd, t_list **list)
 			return ;
 		}
 		buf[buf_bytes] = '\0';
-		if (buf[buf_bytes] == '\0')
-			append_buf(fd, list, buf);
+		append_buf(fd, list, buf);
 	}
 }
 
@@ -106,7 +105,7 @@ char	*get_next_line(int fd)
 	static t_list	*list[FOPEN_MAX];
 	char			*next_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0 || fd > FOPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
 		return (NULL);
 	create_list(fd, list);
 	if (!list[fd])

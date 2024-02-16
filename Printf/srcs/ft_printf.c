@@ -6,7 +6,7 @@
 /*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:27:37 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/16 11:08:38 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/16 11:35:25 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,14 @@ int	ft_printf(const char *str, ...)
 
 // #include <stdio.h>
 // #include <limits.h>
-// void    main()
+// int    main()
 // {
-//     char    character = 'A';
-//     char    *string = "Hello";
-//     int     integer = -42;
-//     unsigned int    uninteger = 42;
-//     void    *ptr = (void *)string;
-//     int     count;
+//     // char    character = 'A';
+//     // char    *string = "Hello";
+//     // int     integer = -42;
+//     // unsigned int    uninteger = 42;
+//     // void    *ptr = (void *)string;
+//     // int     count;
 
 //     // count = printf("%c\n", character);
 //     // printf("count is %d\n", count);

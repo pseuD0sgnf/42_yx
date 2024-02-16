@@ -3,7 +3,7 @@ NAME	= libftprintf.a
 SRCS	= ./srcs/ft_printf.c \
 		  ./srcs/ft_printf_utils.c
 
-OBJS	= $(SRCS:.c =.o)
+OBJS	= $(SRCS:.c=.o)
 
 CC		= gcc
 
