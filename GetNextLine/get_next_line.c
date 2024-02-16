@@ -6,7 +6,7 @@
 /*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:06:31 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/16 15:14:07 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/16 16:46:07 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	create_list(int fd, t_list **list)
 		if (!buf)
 			return ;
 		buf_bytes = read(fd, buf, BUFFER_SIZE);
-		if (!buf_bytes)
+		if (buf_bytes <= 0)
 		{
 			free(buf);
 			return ;
