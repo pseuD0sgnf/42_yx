@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yuxchen <yuxchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:06:31 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/16 16:51:20 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/21 18:55:32 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,10 @@ void	create_list(int fd, t_list **list)
 
 char	*get_next_line(int fd)
 {
-	static t_list	*list[FOPEN_MAX];
+	static t_list	*list[4096];
 	char			*next_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 4096)
 		return (NULL);
 	create_list(fd, list);
 	if (!list[fd])
