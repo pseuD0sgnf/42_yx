@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuxchen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: yuxchen <yuxchen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 18:00:13 by yuxchen           #+#    #+#             */
-/*   Updated: 2024/02/16 16:47:30 by yuxchen          ###   ########.fr       */
+/*   Updated: 2024/02/21 18:58:40 by yuxchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h> // read()
 # include <stdlib.h> // malloc() free()
 # include <stdbool.h> // bool
-# include <stdio.h> // FOPEN_MAX
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
